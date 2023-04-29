@@ -23,7 +23,7 @@ contract Lottery{
   }
 
   function random() internal view returns(uint){
-      return uint(keccak256(abi.encodePacked(block.difficulty,block.prevrandao,players.length)));
+      return uint(keccak256(abi.encodePacked(block.prevrandao,block.timestamp,players.length)));
   }
 
   function pickWinner() public{
